@@ -1,0 +1,1 @@
+setup.sh (version 2) is same as gpc-install-gpu.sh (version 1)

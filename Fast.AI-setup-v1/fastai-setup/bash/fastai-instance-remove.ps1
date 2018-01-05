@@ -1,0 +1,15 @@
+gcloud compute firewall-rules delete default-allow-jupyter
+gcloud compute firewall-rules delete default-allow-https
+gcloud compute firewall-rules delete default-allow-http
+gcloud compute instances delete fastai-instance
+gcloud compute addresses delete ip-address
+gcloud compute firewall-rules delete default-allow-jupyter
+gcloud compute firewall-rules delete default-allow-https
+gcloud compute firewall-rules delete default-allow-http
+gcloud compute instances delete fastai-instance
+gcloud compute addresses delete ip-address
+gcloud compute firewall-rules delete default-allow-jupyter
+gcloud compute firewall-rules delete default-allow-https
+gcloud compute firewall-rules delete default-allow-http
+gcloud compute instances delete fastai-instance
+gcloud compute addresses delete ip-address

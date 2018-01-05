@@ -1,0 +1,30 @@
+# Connect to your instance:
+gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
+# Stop your instance: :
+gcloud compute instances stop fastai-instance
+# Start your instance:
+gcloud compute instances start fastai-instance
+# Reboot your instance:
+gcloud compute instances reset fastai-instance
+# Address for Jupyter notebook in your browser:
+IP Address: 
+# Connect to your instance:
+gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
+# Stop your instance: :
+gcloud compute instances stop fastai-instance
+# Start your instance:
+gcloud compute instances start fastai-instance
+# Reboot your instance:
+gcloud compute instances reset fastai-instance
+# Address for Jupyter notebook in your browser:
+IP Address: 
+# Connect to your instance:
+gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
+# Stop your instance: :
+gcloud compute instances stop fastai-instance
+# Start your instance:
+gcloud compute instances start fastai-instance
+# Reboot your instance:
+gcloud compute instances reset fastai-instance
+# Address for Jupyter notebook in your browser:
+IP Address: 

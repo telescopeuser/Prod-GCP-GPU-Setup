@@ -1,4 +1,9 @@
 http://www.fast.ai/
+
+###############
+# step 1 
+###############
+
 use script and GCP SDK to create NEW GPU vm instance:
 
 # if you want to delete existing one, firstly run commands in Prod-GCP-GPU-Setup\telescopeuser-gcp-setup\step1-gcp-gpu-vm\misc\run-before-recreate-gpu-vm.txt
@@ -8,19 +13,19 @@ $ gcloud init
 
 # make sure Google Cloud Platform authentication is successful, then:
 
-wget https://github.com/telescopeuser/Prod-GCP-GPU-Setup/blob/master/gcp-asia-east1.sh
+wget https://raw.githubusercontent.com/telescopeuser/Prod-GCP-GPU-Setup/master/step1-gcp-gpu-vm/gcp-asia-east1.sh
 bash gcp-asia-east1.sh
 
 SSH into GCP new GPU vm instance fastai-instance:
-gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
+gcloud compute --project xxxxx-your-project-id-xxxxx ssh --zone asia-east1-a fastai-instance
 gcloud compute ssh fastai-instance
 
 
 ###############
-# version 2: python 3
+# step 2
 ###############
-# Bash script for setting up environment on Ubuntu 16.04 (python 2.7 was used due to Fast.AI course requirements)
-wget https://raw.githubusercontent.com/telescopeuser/fastai-v2-setup/master/setup.sh
+# Bash script for setting up environment on Ubuntu 16.04 (python 3 was used due to Fast.AI course requirements)
+wget https://raw.githubusercontent.com/telescopeuser/Prod-GCP-GPU-Setup/master/step2-python-env/setup.sh
 bash setup.sh
 
 
@@ -44,9 +49,9 @@ conda install keras
 # log of above commands
 #######################################
 
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ ls
+iss-user@iss-vm:[omitted]-setup-v1/Prod-GCP-GPU-Setup/bash$ ls
 fastai-instance-commands.txt  fastai-instance-remove.ps1  gcp-asia-east1.sh
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud init
+iss-user@iss-vm:[omitted]-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud init
 Welcome! This command will take you through the configuration of gcloud.
 
 Settings from your current configuration [default] are:
@@ -54,9 +59,9 @@ compute:
   region: asia-east1
   zone: asia-east1-a
 core:
-  account: samisitspecialist@gmail.com
+  account: xxxxxxxxxxxxxxxx@gmail.com
   disable_usage_reporting: 'True'
-  project: gz-deep-learning
+  project: xxxxx-your-project-id-xxxxx
 
 Pick configuration to use:
  [1] Re-initialize this configuration [default] with new settings 
@@ -83,14 +88,14 @@ Please enter your numeric choice:  1
 You are logged in as: [samisitspecialist@gmail.com].
 
 Pick cloud project to use: 
- [1] gz-deep-learning
+ [1] xxxxx-your-project-id-xxxxx
  [2] gz-iss-nus
  [3] kudosdata01
  [4] Create a new project
 Please enter numeric choice or text value (must exactly match list 
 item):  1
 
-Your current project has been set to: [gz-deep-learning].
+Your current project has been set to: [xxxxx-your-project-id-xxxxx].
 
 Do you want to configure Google Compute Engine 
 (https://cloud.google.com/compute) settings (Y/n)?  y
@@ -151,7 +156,7 @@ You can change it by running [gcloud config set compute/region NAME].
 Your Google Cloud SDK is configured and ready to use!
 
 * Commands that require authentication will use samisitspecialist@gmail.com by default
-* Commands will reference project `gz-deep-learning` by default
+* Commands will reference project `xxxxx-your-project-id-xxxxx` by default
 * Compute Engine commands will use region `asia-east1` by default
 * Compute Engine commands will use zone `asia-east1-a` by default
 
@@ -164,29 +169,29 @@ Some things to try next:
 
 * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
 * Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ bash gcp-asia-east1.sh 
+iss-user@iss-vm:[omitted]-setup-v1/Prod-GCP-GPU-Setup/bash$ bash gcp-asia-east1.sh 
 Creating static IP address...
-Created [https://www.googleapis.com/compute/v1/projects/gz-deep-learning/regions/asia-east1/addresses/ip-address].
+Created [https://www.googleapis.com/compute/v1/projects/xxxxx-your-project-id-xxxxx/regions/asia-east1/addresses/ip-address].
 gcp-asia-east1.sh: line 13: =gcloud: command not found
 Creating virtual machine in asia-east1-a operating Ubuntu 16.04 LTS, 32GB RAM / 128GB SSD / Tesla K80 GPU...
-Created [https://www.googleapis.com/compute/v1/projects/gz-deep-learning/zones/asia-east1-a/instances/fastai-instance].
+Created [https://www.googleapis.com/compute/v1/projects/xxxxx-your-project-id-xxxxx/zones/asia-east1-a/instances/fastai-instance].
 NAME             ZONE          MACHINE_TYPE                PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
 fastai-instance  asia-east1-a  custom (1 vCPU, 32.00 GiB)               10.140.0.2   35.201.234.47  RUNNING
-Creating firewall...|Created [https://www.googleapis.com/compute/v1/projects/gz-deep-learning/global/firewalls/default-allow-http].                                     
+Creating firewall...|Created [https://www.googleapis.com/compute/v1/projects/xxxxx-your-project-id-xxxxx/global/firewalls/default-allow-http].                                     
 Creating firewall...done.                                                                                                                                               
 NAME                NETWORK  DIRECTION  PRIORITY  ALLOW   DENY
 default-allow-http  default  INGRESS    1000      tcp:80
-Creating firewall.../Created [https://www.googleapis.com/compute/v1/projects/gz-deep-learning/global/firewalls/default-allow-https].                                    
+Creating firewall.../Created [https://www.googleapis.com/compute/v1/projects/xxxxx-your-project-id-xxxxx/global/firewalls/default-allow-https].                                    
 Creating firewall...done.                                                                                                                                               
 NAME                 NETWORK  DIRECTION  PRIORITY  ALLOW    DENY
 default-allow-https  default  INGRESS    1000      tcp:443
-Creating firewall...|Created [https://www.googleapis.com/compute/v1/projects/gz-deep-learning/global/firewalls/default-allow-jupyter].                                  
+Creating firewall...|Created [https://www.googleapis.com/compute/v1/projects/xxxxx-your-project-id-xxxxx/global/firewalls/default-allow-jupyter].                                  
 Creating firewall...done.                                                                                                                                               
 NAME                   NETWORK  DIRECTION  PRIORITY  ALLOW          DENY
 default-allow-jupyter  default  INGRESS    1000      tcp:8888-8898
 All done. Find all you need to connect in the fastai-instance-commands.txt file and to remove the stack call fastai-instance-remove.ps1
-Connect to your instance: gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
+Connect to your instance: gcloud compute --project xxxxx-your-project-id-xxxxx ssh --zone asia-east1-a fastai-instance
+iss-user@iss-vm:[omitted]-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud compute --project xxxxx-your-project-id-xxxxx ssh --zone asia-east1-a fastai-instance
 WARNING: The public SSH key file for gcloud does not exist.
 WARNING: The private SSH key file for gcloud does not exist.
 WARNING: You do not have an SSH key for gcloud.
@@ -215,7 +220,7 @@ The key's randomart image is:
 |     o B..O +o.. |
 |      o.o*o=o+.  |
 +----[SHA256]-----+
-Updating project ssh metadata...\Updated [https://www.googleapis.com/compute/v1/projects/gz-deep-learning].                                                             
+Updating project ssh metadata...\Updated [https://www.googleapis.com/compute/v1/projects/xxxxx-your-project-id-xxxxx].                                                             
 Updating project ssh metadata...done.                                                                                                                                   
 Waiting for SSH key to propagate.
 Warning: Permanently added 'compute.3725998437769113197' (ECDSA) to the list of known hosts.
@@ -5276,7 +5281,7 @@ Enabling notebook extension jupyter-js-widgets/extension...
 Connection to 35.201.234.47 closed by remote host.
 Connection to 35.201.234.47 closed.
 ERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud compute ssh fastai-instance
+iss-user@iss-vm:[omitted]-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud compute ssh fastai-instance
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.13.0-1002-gcp x86_64)
 
  * Documentation:  https://help.ubuntu.com

@@ -1,14 +1,14 @@
 http://www.fast.ai/
 use script and GCP SDK to create NEW GPU vm instance:
 
-# if you want to delete existing one, firstly run commands in https://github.com/telescopeuser/fastai-setup/blob/master/bash/fastai-instance-remove.ps1
+# if you want to delete existing one, firstly run commands in Prod-GCP-GPU-Setup\telescopeuser-gcp-setup\step1-gcp-gpu-vm\misc\run-before-recreate-gpu-vm.txt
 
 in iss-vm, open terminal:
 $ gcloud init
 
 # make sure Google Cloud Platform authentication is successful, then:
 
-wget https://github.com/telescopeuser/fastai-setup/blob/master/bash/gcp-asia-east1.sh
+wget https://github.com/telescopeuser/Prod-GCP-GPU-Setup/blob/master/gcp-asia-east1.sh
 bash gcp-asia-east1.sh
 
 SSH into GCP new GPU vm instance fastai-instance:
@@ -23,13 +23,6 @@ gcloud compute ssh fastai-instance
 wget https://raw.githubusercontent.com/telescopeuser/fastai-v2-setup/master/setup.sh
 bash setup.sh
 
-
-###############
-# version 1: python 2 (This is dated.)
-###############
-# Bash script for setting up environment on Ubuntu 16.04 (python 2.7 was used due to Fast.AI course requirements)
-# wget https://raw.githubusercontent.com/telescopeuser/fastai-setup/master/gpc-install-gpu.sh
-# bash gpc-install-gpu.sh
 
 # SSH again
 gcloud compute ssh fastai-instance
@@ -51,9 +44,9 @@ conda install keras
 # log of above commands
 #######################################
 
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/fastai-setup/bash$ ls
+iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ ls
 fastai-instance-commands.txt  fastai-instance-remove.ps1  gcp-asia-east1.sh
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/fastai-setup/bash$ gcloud init
+iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud init
 Welcome! This command will take you through the configuration of gcloud.
 
 Settings from your current configuration [default] are:
@@ -171,7 +164,7 @@ Some things to try next:
 
 * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
 * Run `gcloud topic -h` to learn about advanced features of the SDK like arg files and output formatting
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/fastai-setup/bash$ bash gcp-asia-east1.sh 
+iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ bash gcp-asia-east1.sh 
 Creating static IP address...
 Created [https://www.googleapis.com/compute/v1/projects/gz-deep-learning/regions/asia-east1/addresses/ip-address].
 gcp-asia-east1.sh: line 13: =gcloud: command not found
@@ -193,7 +186,7 @@ NAME                   NETWORK  DIRECTION  PRIORITY  ALLOW          DENY
 default-allow-jupyter  default  INGRESS    1000      tcp:8888-8898
 All done. Find all you need to connect in the fastai-instance-commands.txt file and to remove the stack call fastai-instance-remove.ps1
 Connect to your instance: gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/fastai-setup/bash$ gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
+iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud compute --project gz-deep-learning ssh --zone asia-east1-a fastai-instance
 WARNING: The public SSH key file for gcloud does not exist.
 WARNING: The private SSH key file for gcloud does not exist.
 WARNING: You do not have an SSH key for gcloud.
@@ -5283,7 +5276,7 @@ Enabling notebook extension jupyter-js-widgets/extension...
 Connection to 35.201.234.47 closed by remote host.
 Connection to 35.201.234.47 closed.
 ERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].
-iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/fastai-setup/bash$ gcloud compute ssh fastai-instance
+iss-user@iss-vm:/media/sf_vm_shared_folder/my_github_repo/ai-saturday/2017-12-30/Fast.AI-setup-v1/Prod-GCP-GPU-Setup/bash$ gcloud compute ssh fastai-instance
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.13.0-1002-gcp x86_64)
 
  * Documentation:  https://help.ubuntu.com

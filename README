@@ -59,7 +59,7 @@ compute:
   region: asia-east1
   zone: asia-east1-a
 core:
-  account: xxxxxxxxxxxxxxxx@gmail.com
+  account: xxxxxxx-email-xxxxxxx@gmail.com
   disable_usage_reporting: 'True'
   project: xxxxx-your-project-id-xxxxx
 
@@ -81,11 +81,11 @@ Network diagnostic (1/1 checks) passed.
 
 Choose the account you would like to use to perform operations for 
 this configuration:
- [1] samisitspecialist@gmail.com
+ [1] xxxxxxx-email-xxxxxxx@gmail.com
  [2] Log in with a new account
 Please enter your numeric choice:  1
 
-You are logged in as: [samisitspecialist@gmail.com].
+You are logged in as: [xxxxxxx-email-xxxxxxx@gmail.com].
 
 Pick cloud project to use: 
  [1] xxxxx-your-project-id-xxxxx
@@ -155,7 +155,7 @@ You can change it by running [gcloud config set compute/region NAME].
 
 Your Google Cloud SDK is configured and ready to use!
 
-* Commands that require authentication will use samisitspecialist@gmail.com by default
+* Commands that require authentication will use xxxxxxx-email-xxxxxxx@gmail.com by default
 * Commands will reference project `xxxxx-your-project-id-xxxxx` by default
 * Compute Engine commands will use region `asia-east1` by default
 * Compute Engine commands will use zone `asia-east1-a` by default
